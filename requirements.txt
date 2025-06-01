@@ -1,0 +1,16 @@
+praw
+requests
+pandas
+scikit-learn
+matplotlib
+seaborn
+tqdm
+flask
+gunicorn
+opencv-python
+transformers
+nltk
+torch
+tensorflow
+sentence-transformers
+joblib
