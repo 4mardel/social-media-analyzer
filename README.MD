@@ -1,19 +1,18 @@
-# Intelligent Social Media Analyzer
+## ✅ Этап 1: Сбор данных с Reddit
 
-🎯 This project aims to analyze social media posts (text + images) using modern ML & DL techniques and deploy them via a Flask web app.
+**Описание:**  
+С помощью библиотеки `praw` был реализован сбор постов из Reddit. Были выбраны три сабреддита:
 
-## 🔧 Project Structure
+- `Art` 🎨 — изображения искусства
+- `pics` 🖼 — разнообразные фото
+- `cats` 🐱 — посты с кошками
 
-- `src/crawler/` – data collection from Reddit
-- `src/preprocessing/` – cleaning text and images
-- `src/ml_models/` – classic ML for popularity prediction
-- `src/nlp_models/` – text classification using LSTM and embeddings
-- `src/detection/` – object detection using YOLO
-- `flask_app/` – Flask-based web app with API
+**Что было сделано:**
+- Подключение к Reddit API через `client_id`, `client_secret`, `user_agent`
+- Скачивание изображений (`.jpg`, `.jpeg`, `.png`) с проверкой доступности
+- Сбор метаданных: `title`, `text`, `upvotes`, `created_utc`, `subreddit`, `url`
+- Сохранение изображений в `data/raw/images/` (исключены из репозитория)
+- Сохранение постов в `data/raw/reddit_data_<subreddit>.json`
 
-## 📊 Tools & Libraries
-
-- Python, Pandas, Scikit-learn, LightGBM
-- PyTorch, TensorFlow/Keras
-- YOLOv8
-- Flask + Gunicorn
+**Итог:**  
+Собрано **150 постов** (по 50 с каждого сабреддита), изображения успешно скачаны, данные готовы к очистке и разметке.

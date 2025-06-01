@@ -22,7 +22,7 @@ def download_image(url, folder, filename):
                     f.write(chunk)
             return True
     except Exception as e:
-        print(f"[!] Failed to download {url}: {e}")
+        print(f"Failed to download {url}: {e}")
     return False
 
 def crawl_subreddit(reddit, subreddit_name='Art', limit=50):
