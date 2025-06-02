@@ -17,32 +17,59 @@ A Flask-based web application that analyzes social media posts using machine lea
 ## 📁 Project Structure
 
 project/
+
 ├── data/
+
 │ ├── raw/ # Reddit JSON data
+
 │ └── processed/ # Cleaned data (CSV)
+
 ├── flask_app/
+
 │ ├── app.py # Flask application
+
 │ ├── model_loader.py # Loads models and utilities
+
 │ ├── templates/index.html # HTML interface
+
 │ ├── static/uploads/ # Uploaded images
+
 │ ├── requirements.txt # Dependencies
+
 │ ├── yolo_detection/ # YOLOv8 object detection
+
 │ └── Dockerfile # Docker setup
+
 ├── saved_models/ # Trained model files
+
 │ ├── topic_classifier_lgbm.pkl
+
 │ ├── topic_classifier_lstm.h5
+
 │ ├── topic_label_encoder.pkl
+
 │ ├── tokenizer.pkl
+
 │ ├── tfidf_vectorizer.pkl
+
 │ ├── label_encoder.pkl
+
 │ └── popularity_model.pkl
+
 ├── src/
+
 │ ├── crawler/ # Reddit data scraper
+
 │ ├── detection/ # YOLOv8 object detection
+
 │ ├── ml_models/ # Training scripts for ml models
+
 │ ├── nlp_models/ # Training scripts for nlp models
+
 │ └── preprocessing/ # Preprocessing utilities
+
 ├── notebooks/
+
 │ └── analysis.ipynb # Experiment notebook
 
 ---
@@ -51,30 +78,38 @@ project/
 
 ### 1. Clone the repository
 
-bash
-git clone https://github.com/your-username/social-media-analyzer.git
+git clone https://github.com/4mardel/social-media-analyzer
 cd social-media-analyzer
 
 ### 2. Install dependencies
 Create a virtual environment and activate it:
 
 python -m venv venv
+
 source venv/bin/activate  # or venv\Scripts\activate on Windows
+
 Install required packages:
 
 cd flask_app
+
 pip install -r requirements.txt
 
 ### 3. Run the application
 python app.py
+
 Visit the web app at: http://127.0.0.1:5000
 
 ## 🤖 Models & Technologies
 Text - Embedding, sentence-transformers (MiniLM)
+
 Topic Classification - LightGBM + LabelEncoder
+
 Popularity Prediction - RandomForestClassifier
+
 Object Detection - YOLOv8 (via ultralytics)
+
 Web App - Flask, HTML, Bootstrap
+
 Model I/O - Joblib, Keras, H5
 
 ## 🧠 How It Works
@@ -100,8 +135,10 @@ docker build -t social-media-app .
 
 ### Run the container
 docker run -p 5000:5000 social-media-app
+
 Then access the app via http://localhost:5000
 
 ## 👨‍💻 Author
 Developed by Damir Niyazbek
+
 GitHub: @4mardel
