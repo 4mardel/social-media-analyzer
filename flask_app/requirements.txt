@@ -1,0 +1,8 @@
+flask
+numpy
+pandas
+scikit-learn
+joblib
+sentence-transformers
+opencv-python-headless
+Pillow

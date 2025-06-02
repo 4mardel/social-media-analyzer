@@ -1,8 +1,31 @@
+# Python
 __pycache__/
 *.pyc
-*.ipynb_checkpoints
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+
+# Environments
 .env
 venv/
-data/raw/images/
-saved_models/
+venv_tf/
+
+# OS
 .DS_Store
+
+# Data & Models
+data/raw/
+*.h5
+*.pkl
+
+# Uploads (user-generated)
+flask_app/static/uploads/
+
+# Docker
+*.log
+*.db
+*.sqlite3
+*.pid
+
+# VSCode
+.vscode/

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Social Media Post Analyzer</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: auto; padding: 20px; }
+    input, textarea, button { width: 100%; margin-top: 10px; padding: 8px; }
+    .result { margin-top: 20px; padding: 10px; background-color: #f4f4f4; border-radius: 5px; }
+  </style>
+</head>
+<body>
+    <h1>📊 Analyze a Social Media Post</h1>
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <label for="text">Post text:</label><br>
+        <textarea name="text" rows="4" cols="50"></textarea><br><br>
+
+        <label for="image">Upload image:</label>
+        <input type="file" name="image"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+{% if image_url %}
+  <div class="result">
+    <img src="{{ image_url }}" width="300"><br>
+    <strong>Detected Objects:</strong> {{ objects | join(", ") }}
+  </div>
+{% endif %}
+  {% if topic %}
+    <div class="result">
+      <strong>Predicted Topic:</strong> {{ topic }}<br>
+      <strong>Popular:</strong> {{ 'Yes' if is_popular else 'No' }}
+    </div>
+  {% endif %}
+
+  {% if error %}
+    <div class="result" style="color: red;">
+      <strong>Error:</strong> {{ error }}
+    </div>
+  {% endif %}
+</body>
+</html>

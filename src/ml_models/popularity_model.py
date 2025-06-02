@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import roc_auc_score
 
 def extract_features(df):
     df["text_length"] = df["clean_text"].str.len()
@@ -35,6 +36,8 @@ def train_model(input_path="data/processed/labeled_data.csv", model_path="saved_
     y_pred = model.predict(X_test)
     print("Classification Report:")
     print(classification_report(y_test, y_pred))
+    roc_auc = roc_auc_score(y_test, model.predict_proba(X_test)[:, 1])
+    print(f"\nROC AUC: {roc_auc:.4f}")
 
     joblib.dump(model, model_path)
     print(f"Model saved to {model_path}")

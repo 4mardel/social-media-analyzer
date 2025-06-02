@@ -58,7 +58,7 @@ def train_model():
 
     import joblib
     joblib.dump(tokenizer, "saved_models/tokenizer.pkl")
-    joblib.dump(label_encoder, "saved_models/label_encoder.pkl")
+    joblib.dump(label_encoder, "saved_models/label_encoder.pkl")    
 
     print("Model and tokenizer saved.")
 
