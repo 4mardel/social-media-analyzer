@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-model = YOLO("yolov8n.pt")  # или путь к весам, если локально
+model = YOLO("yolov8n.pt")
 
 def detect_objects(image_path):
     results = model(image_path)
