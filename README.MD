@@ -83,15 +83,13 @@ git clone https://github.com/4mardel/social-media-analyzer
 cd social-media-analyzer
 
 ### 2. Install dependencies
-Create a virtual environment and activate it:
+*Create a virtual environment and activate it:*
 
 python -m venv venv
 
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 
-
-
-Install required packages:
+*Install required packages:*
 
 cd flask_app
 
