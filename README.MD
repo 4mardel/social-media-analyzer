@@ -79,6 +79,7 @@ project/
 ### 1. Clone the repository
 
 git clone https://github.com/4mardel/social-media-analyzer
+
 cd social-media-analyzer
 
 ### 2. Install dependencies
